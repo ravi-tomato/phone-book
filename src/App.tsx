@@ -1,6 +1,4 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import { useQuery, gql } from '@apollo/client'
 
@@ -16,7 +14,7 @@ const GET_LOCATIONS = gql`
 `
 function App() {
   const { loading, error, data } = useQuery(GET_LOCATIONS)
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState<number>(0)
 
   if(loading) return <p>Loading ...</p>
   if(error) return <p>Error: { error.message } </p>
